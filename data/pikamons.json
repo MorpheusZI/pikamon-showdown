@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "name": "Pokechu",
+        "def": 20,
+        "attacks": [
+            {
+                "name": "Lightning Ball"
+                "dmg": 15
+            },
+            {
+                "name": "Bolt Strike"
+                "dmg": 10
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Charmandor",
+        "def": 10,
+        "attacks": [
+            {
+                "name": "Scratch"
+                "dmg": 20
+            },
+            {
+                "name": "Ember"
+                "dmg": 25
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Squirmle",
+        "def": 15,
+        "attacks": [
+            {
+                "name": "Spray"
+                "dmg": 20
+            },
+            {
+                "name": "Drizzle"
+                "dmg": 15
+            },
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Bulbazar",
+        "def": 18,
+        "attacks": [
+            {
+                "name": "Leek Spin",
+                "dmg": 15
+            },
+            {
+                "name": "Seed Spit",
+                "dmg": 20
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Jigglybuff",
+        "def": 25,
+        "attacks": [
+            {
+                "name": "Marker Pen",
+                "dmg": 10
+            },
+            {
+                "name": "Hyper Slap",
+                "dmg": 30
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Geobro",
+        "def": 30,
+        "attacks": [
+            {
+                "name": "Fist Bump",
+                "dmg": 15
+            },
+            {
+                "name": "Rock Hard",
+                "dmg": 25
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Sighduck",
+        "def": 12,
+        "attacks": [
+            {
+                "name": "Confused Honk",
+                "dmg": 35
+            },
+            {
+                "name": "Head Headache",
+                "dmg": 5
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Snoremax",
+        "def": 40,
+        "attacks": [
+            {
+                "name": "Body Flop",
+                "dmg": 25
+            },
+            {
+                "name": "Sleep Talk",
+                "dmg": 10
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Gengarrr",
+        "def": 15,
+        "attacks": [
+            {
+                "name": "Spooky Tongue",
+                "dmg": 20
+            },
+            {
+                "name": "Shadow Sneak",
+                "dmg": 22
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Mewthree",
+        "def": 22,
+        "attacks": [
+            {
+                "name": "Brain Blast",
+                "dmg": 40
+            },
+            {
+                "name": "Spoon Bend",
+                "dmg": 15
+            }
+        ]
+    }
+]

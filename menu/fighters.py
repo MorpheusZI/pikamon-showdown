@@ -5,15 +5,6 @@ import data.datafunctions as df
 fighters = df.load_data()
 
 
-def fighter_picker(fname):
-    picked_fighter = {}
-    for fighter in fighters:
-        if fighter['fname'] == fname:
-            picked_fighter = fighter
-
-    return picked_fighter
-
-
 def fighter_info(fighter):
     time.sleep(1)  # bikin tidur
     start.clear_screen()  # bersih
@@ -45,7 +36,6 @@ def add_fighters_menu():
     time.sleep(0.9)
 
     print("new fighter created!\n")
-    print("")
 
     time.sleep(1)
 

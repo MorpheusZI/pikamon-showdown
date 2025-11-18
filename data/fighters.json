@@ -3,84 +3,12 @@
         "id": 1,
         "fname": "ayyubi",
         "level": 14,
-        "pikamons": [
-            {
-                "name": "Bulbaksor",
-                "def": 50,
-                "atk": 20,
-                "moves": [
-                    "Ngajaredog",
-                    "Dahar"
-                ]
-            },
-            {
-                "name": "Charmandor",
-                "def": 30,
-                "atk": 70,
-                "moves": [
-                    "Hitut",
-                    "Sare"
-                ]
-            },
-            {
-                "name": "Pokechu",
-                "def": 40,
-                "atk": 35,
-                "moves": [
-                    "Ngelekuy",
-                    "Ngaloco"
-                ]
-            }
-        ]
+        "pikamons_id": [1,4,6]
     },
     {
         "id": 2,
         "fname": "fatur",
         "level": 1,
-        "pikamons": [
-            {
-                "name": "Bulpasir",
-                "def": 25,
-                "atk": 20,
-                "moves": [
-                    "Ngajaredog",
-                    "Dahar"
-                ]
-            },
-            {
-                "name": "Charmandor",
-                "def": 30,
-                "atk": 70,
-                "moves": [
-                    "Hitut",
-                    "Sare"
-                ]
-            },
-            {
-                "name": "Pokechu",
-                "def": 40,
-                "atk": 35,
-                "moves": [
-                    "Ngelekuy",
-                    "Ngaloco"
-                ]
-            }
-        ]
+        "pikamons_id": [2,3,5]
     },
-    {
-        "id": 1,
-        "fname": "si dapa",
-        "level": 1,
-        "pokemons": [
-            {
-                "name": "Pokechu",
-                "def": 40,
-                "atk": 35,
-                "moves": [
-                    "Ngelekuy",
-                    "Ngaloco"
-                ]
-            }
-        ]
-    }
 ]
