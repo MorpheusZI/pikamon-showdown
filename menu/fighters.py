@@ -8,11 +8,9 @@ pikamons = df.load_data('pikamons')
 
 
 def fighters_display():
+    hf.wiper()
     # inisialisasi
     nfighters = df.load_data('fighters')
-
-    time.sleep(1)  # bikin tidur
-    start.clear_screen()  # bersih
 
     # display
     hf.list_of_fighters(nfighters)
@@ -36,8 +34,7 @@ def fighters_display():
 
 
 def fighter_info(fighter):
-    time.sleep(1)  # bikin tidur
-    start.clear_screen()  # bersih
+    hf.wiper()
 
     fighter_pikamons = hf.fighter_pikamon_pickers(fighter, pikamons)
 
@@ -57,6 +54,9 @@ def fighter_info(fighter):
     print("\n'u' to edit current player name\n'd' to delete current player")
     print("'q' to go back to fighters menu")
     action = input("\nChoose your action!: ")
+
+    while action not in ["d", "u", "q"]:
+        action = input("\nInvalid choice. Choose your action!: ")
 
     if action == "d":
         print("Are you sure you want to delete this fighter?")
@@ -83,8 +83,7 @@ def fighter_info(fighter):
 
 
 def update_fighter_menu(fighter_id):
-    time.sleep(1)  # bikin tidur
-    start.clear_screen()  # bersih
+    hf.wiper()
 
     print("="*40)
     print(" " * 9 + "FIGHTER UPDATE")
@@ -111,8 +110,7 @@ def update_fighter_menu(fighter_id):
 
 
 def add_fighters_menu():
-    time.sleep(1)  # bikin tidur
-    start.clear_screen()  # bersih
+    hf.wiper()
 
     print("="*40)
     print(" " * 7 + "NEW FIGHTER CREATION")

@@ -1,3 +1,13 @@
+import time
+import os
+import random
+
+
+def wiper():
+    time.sleep(1)  # bikin tidur
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def fighter_pikamon_pickers(fighter, pikamons):
     fighter_pikamons = []
     for pikamonid in fighter["pikamons"]:
@@ -34,3 +44,13 @@ def list_of_pikamons(pikamons):
         print(
             f"{i+1}.| {pikamon['name']} | {pikamon['def']} | {fixed_string}|")
     print("-"*60)
+
+
+def boring_loading_lines():
+    print("Searching your opponent...\n")
+    time.sleep(2)
+    loading_lines = ["Running through the forests...",
+                     "Spelunking through the caves...", "Riding through the city..."]
+    for i in range(random.randint(1, 3)):
+        print(loading_lines[i] + "\n")
+        time.sleep(1)

@@ -36,8 +36,8 @@ def add_fighter(fname, starter_pokemon_id):
 def update_fighter(fid, data):
     fighterz = load_data('fighters')
 
+    user_found = False
     if data["option"] == 'name':
-        user_found = False
 
         for fighter in fighterz:
 
@@ -45,11 +45,18 @@ def update_fighter(fid, data):
                 fighter["fname"] = data["data"]
                 user_found = True
                 break
+    elif data["option"] == "level":
+        for fighter in fighterz:
 
-        if user_found:
-            save_data(fighterz)
-        else:
-            print("ga bisa coy")
+            if fighter["id"] == fid:
+                fighter["level"] += 1
+                user_found = True
+                break
+
+    if user_found:
+        save_data(fighterz)
+    else:
+        print("ga bisa coy")
 
 
 def delete_fighter(fid):

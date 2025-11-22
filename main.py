@@ -1,14 +1,11 @@
 import menu.fight as fightmenu
 import menu.fighters as fighters
-import os
-
-
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+import fungsi.helperfunctions as hf
 
 
 def display_start_menu():
-    clear_screen()
+    hf.wiper()
+
     print("===========================================================")
     print("  PPPPPP IIIIII KKK  KKK AAAAAA MMMMMMMMMM OOOOOO NNNNNN !")
     print("  PP  PP   II   KK  KKK  AA  AA MM  MM  MM OO  OO NN  NN !")
@@ -30,7 +27,7 @@ def display_start_menu():
     choice = input("Enter your choice (1-3): ")
 
     if choice == "1":
-        fightmenu.fighting_sequence()
+        fightmenu.fight_initiation()
     elif choice == "2":
         fighters.fighters_display()
     elif choice == "3":
