@@ -5,11 +5,11 @@
         "def": 20,
         "attacks": [
             {
-                "name": "Lightning Ball"
+                "name": "Lightning Ball",
                 "dmg": 15
             },
             {
-                "name": "Bolt Strike"
+                "name": "Bolt Strike",
                 "dmg": 10
             }
         ]
@@ -20,11 +20,11 @@
         "def": 10,
         "attacks": [
             {
-                "name": "Scratch"
+                "name": "Scratch",
                 "dmg": 20
             },
             {
-                "name": "Ember"
+                "name": "Ember",
                 "dmg": 25
             }
         ]
@@ -35,13 +35,13 @@
         "def": 15,
         "attacks": [
             {
-                "name": "Spray"
+                "name": "Spray",
                 "dmg": 20
             },
             {
-                "name": "Drizzle"
+                "name": "Drizzle",
                 "dmg": 15
-            },
+            }
         ]
     },
     {

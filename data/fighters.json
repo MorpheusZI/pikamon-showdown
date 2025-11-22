@@ -3,12 +3,28 @@
         "id": 1,
         "fname": "ayyubi",
         "level": 14,
-        "pikamons_id": [1,4,6]
+        "pikamons_id": [
+            1,
+            4,
+            6
+        ]
     },
     {
         "id": 2,
         "fname": "fatur",
         "level": 1,
-        "pikamons_id": [2,3,5]
+        "pikamons_id": [
+            2,
+            3,
+            5
+        ]
     },
+    {
+        "id": 3,
+        "fname": "lele",
+        "level": 1,
+        "pikamons_id": [
+            1
+        ]
+    }
 ]
