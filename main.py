@@ -16,7 +16,7 @@ def display_start_menu():
     print("  PP       II   KK  KKK  AA  AA MM  MM  MM OO  OO NN  NN !")
     print("  PP     IIIIII KKK  KKK AA  AA MM  MM  MM OOOOOO NN  NN !")
     print("===========================================================")
-    print("           BY KELOMPOK 12 (MOAL UAS)")
+    print("                 BY KELOMPOK 12 (MOAL UAS)")
     print("-----------------------------------------------------------")
 
     print("\n")
@@ -30,7 +30,7 @@ def display_start_menu():
     choice = input("Enter your choice (1-3): ")
 
     if choice == "1":
-        fightmenu.display_arena()
+        fightmenu.fighting_sequence()
     elif choice == "2":
         fighters.fighters_display()
     elif choice == "3":
