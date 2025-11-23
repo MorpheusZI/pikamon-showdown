@@ -13,7 +13,6 @@ nfighters = df.load_data('fighters')
 
 
 def fight_initiation():
-
     # pick fighter
     fighter = fighter_pick_display()
     fighter_pikamons = hf.fighter_pikamon_pickers(fighter, pikamons)
@@ -32,13 +31,14 @@ def fighter_pick_display():
 
     hf.list_of_fighters(nfighters)
 
-    choice = int(
-        input("\nChoose your fighter!: "))
+    print("'q' to go back to start menu")
+    choice = input("\nChoose your fighter!: ")
 
-    while choice > len(nfighters):
-        choice = int(input("bad option.. \nChoose your fighter!: "))
+    if choice == 'q':
+        display_start_menu()
+        return
 
-    return nfighters[choice-1]
+    return nfighters[int(choice)-1]
 
 
 def pikamon_pick_display(pikamons):
@@ -46,13 +46,17 @@ def pikamon_pick_display(pikamons):
 
     hf.list_of_pikamons(pikamons)
 
-    choice = int(
-        input("\nChoose your pikamon to fight!: "))
+    print("'q' to go back to start menu")
+    choice = input("\nChoose your Pikamon!: ")
 
-    while choice > len(pikamons):
+    if choice == 'q':
+        display_start_menu()
+        return
+
+    while int(choice) > len(pikamons):
         choice = int(input("bad option.. \nChoose your fighter!: "))
 
-    return pikamons[choice-1]
+    return pikamons[int(choice)-1]
 
 
 def opponent_pikamon_picker():
@@ -113,8 +117,6 @@ def draw_scene(player, enemy):
 
 def fighting_sequence(fighter, pikamon, opp):
     round = 1
-    pikamon_total_dmg = 0
-    opp_total_dmg = 0
 
     pikamon["health"] = 100
     opp["health"] = 100
@@ -122,10 +124,10 @@ def fighting_sequence(fighter, pikamon, opp):
     battle_stats = {
         "fighter": fighter,
         "pikamon": pikamon["name"],
-        "opponent_pikamon": opp["name"],
+        "opponent_pikamon": opp,
         "rounds": round,
-        "fighter_damage_made": pikamon_total_dmg,
-        "opp_damage_made": opp_total_dmg,
+        "fighter_damage_made": 0,
+        "opp_damage_made": 0,
         "result": ''
     }
 
@@ -150,7 +152,7 @@ def fighting_sequence(fighter, pikamon, opp):
         player_attack = pikamon["attacks"][int(choice) - 1]
 
         dmg_to_opp = math.floor(player_attack["dmg"] - (opp["def"] / 100))
-        pikamon_total_dmg += dmg_to_opp
+        battle_stats["fighter_damage_made"] += dmg_to_opp
         opp["health"] -= dmg_to_opp
 
         time.sleep(0.3)
@@ -169,7 +171,7 @@ def fighting_sequence(fighter, pikamon, opp):
         opp_attack = random.choice(opp["attacks"])
 
         dmg_to_player = math.floor(opp_attack["dmg"] - (pikamon["def"]/100))
-        opp_total_dmg += dmg_to_player
+        battle_stats["opp_damage_made"] += dmg_to_player
         pikamon["health"] -= dmg_to_player
 
         time.sleep(1.5)
@@ -193,10 +195,15 @@ def fighting_sequence(fighter, pikamon, opp):
 
 def result_display(result):
     fighter_name = result["fighter"]["fname"]
+    opp_pikamon_name = result["opponent_pikamon"]["name"]
     fighter_id = result["fighter"]["id"]
+    opp_pikamon_id = result["opponent_pikamon"]["id"]
+
     update_data = {
         "option": "level"
     }
+
+    hf.wiper()
 
     print("-"*40)
     print("BATTLE STATS".ljust(20))
@@ -207,7 +214,7 @@ def result_display(result):
     time.sleep(0.7)
     print(f"2. Pikamon: {result['pikamon']}")
     time.sleep(0.7)
-    print(f"3. Opponent Pikamon: {result['opponent_pikamon']}")
+    print(f"3. Opponent Pikamon: {opp_pikamon_name}")
     time.sleep(1)
     print(f"4. Pikamon total damage made: {result['fighter_damage_made']}")
     time.sleep(1)
@@ -224,11 +231,36 @@ def result_display(result):
         time.sleep(1)
 
         df.update_fighter(fighter_id, update_data)
-        print("Your fighter has just leveled up!")
+        print("Your fighter has just leveled up!\n")
+
         time.sleep(1)
-        print("going back to start menu...")
-        time.sleep(1)
-        display_start_menu()
+        print(f"Would you like to capture {
+              opp_pikamon_name} as your own pikamon?\n")
+        print(">[y] Capture the Pikamon")
+        print(">[n] let the Pikamon free\n")
+        time.sleep(0.7)
+        choice = str(input(">> Choose your action!: "))
+
+        while choice not in ["y", "n"]:
+            choice = str(input(">>Invalid option. Choose your action!: "))
+
+        if choice == "y":
+            update_data = {
+                "option": "capture",
+                "data": opp_pikamon_id
+            }
+            df.update_fighter(fighter_id, update_data)
+            time.sleep(0.5)
+            print(f"\nNow {opp_pikamon_name} is yours! ")
+            time.sleep(1.5)
+            print("\ngoing back to start menu...")
+            time.sleep(1)
+            display_start_menu()
+
+        elif choice == "n":
+            print("\ngoing back to start menu...")
+            time.sleep(1)
+            display_start_menu()
     else:
         print("you suck!")
         time.sleep(1)

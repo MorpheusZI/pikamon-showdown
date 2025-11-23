@@ -35,12 +35,10 @@ def add_fighter(fname, starter_pokemon_id):
 
 def update_fighter(fid, data):
     fighterz = load_data('fighters')
-
     user_found = False
+
     if data["option"] == 'name':
-
         for fighter in fighterz:
-
             if fighter["id"] == fid:
                 fighter["fname"] = data["data"]
                 user_found = True
@@ -50,6 +48,13 @@ def update_fighter(fid, data):
 
             if fighter["id"] == fid:
                 fighter["level"] += 1
+                user_found = True
+                break
+    elif data["option"] == "capture":
+        for fighter in fighterz:
+
+            if fighter["id"] == fid:
+                fighter["pikamons"].append(data["data"])
                 user_found = True
                 break
 

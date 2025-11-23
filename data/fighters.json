@@ -1,5 +1,16 @@
 [
     {
+        "id": 1,
+        "fname": "ayyubi",
+        "level": 3,
+        "pikamons": [
+            7,
+            9,
+            4,
+            5
+        ]
+    },
+    {
         "id": 2,
         "fname": "fatur",
         "level": 2,
@@ -7,22 +18,6 @@
             2,
             9,
             5
-        ]
-    },
-    {
-        "id": 4,
-        "fname": "ara",
-        "level": 1,
-        "pikamons": [
-            3
-        ]
-    },
-    {
-        "id": 6,
-        "fname": "ayyubi",
-        "level": 1,
-        "pikamons": [
-            2
         ]
     }
 ]
