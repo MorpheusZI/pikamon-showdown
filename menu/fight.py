@@ -233,31 +233,37 @@ def result_display(result):
         df.update_fighter(fighter_id, update_data)
         print("Your fighter has just leveled up!\n")
 
-        time.sleep(1)
-        print(f"Would you like to capture {
-              opp_pikamon_name} as your own pikamon?\n")
-        print(">[y] Capture the Pikamon")
-        print(">[n] let the Pikamon free\n")
-        time.sleep(0.7)
-        choice = str(input(">> Choose your action!: "))
+        if opp_pikamon_name != result['pikamon']:
 
-        while choice not in ["y", "n"]:
-            choice = str(input(">>Invalid option. Choose your action!: "))
-
-        if choice == "y":
-            update_data = {
-                "option": "capture",
-                "data": opp_pikamon_id
-            }
-            df.update_fighter(fighter_id, update_data)
-            time.sleep(0.5)
-            print(f"\nNow {opp_pikamon_name} is yours! ")
-            time.sleep(1.5)
-            print("\ngoing back to start menu...")
             time.sleep(1)
-            display_start_menu()
+            print(f"Would you like to capture {
+                  opp_pikamon_name} as your own pikamon?\n")
+            print(">[y] Capture the Pikamon")
+            print(">[n] let the Pikamon free\n")
+            time.sleep(0.7)
+            choice = str(input(">> Choose your action!: "))
 
-        elif choice == "n":
+            while choice not in ["y", "n"]:
+                choice = str(input(">>Invalid option. Choose your action!: "))
+
+            if choice == "y":
+                update_data = {
+                    "option": "capture",
+                    "data": opp_pikamon_id
+                }
+                df.update_fighter(fighter_id, update_data)
+                time.sleep(0.5)
+                print(f"\nNow {opp_pikamon_name} is yours! ")
+                time.sleep(1.5)
+                print("\ngoing back to start menu...")
+                time.sleep(1)
+                display_start_menu()
+
+            elif choice == "n":
+                print("\ngoing back to start menu...")
+                time.sleep(1)
+                display_start_menu()
+        else:
             print("\ngoing back to start menu...")
             time.sleep(1)
             display_start_menu()
